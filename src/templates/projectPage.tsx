@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-interface ProjectQuery {
+type ProjectQuery = {
   data: {
     prismicProject: {
       data: {
@@ -17,7 +17,7 @@ interface ProjectQuery {
       }
     }
   }
-}
+};
 
 const projectPage = ({ data } : ProjectQuery ) => {
   console.log(data)
@@ -30,7 +30,7 @@ const projectPage = ({ data } : ProjectQuery ) => {
   )
 }
 
-export default projectPage
+export default projectPage;
 
 export const query = graphql`
   query ProjectPage($slug: String) {

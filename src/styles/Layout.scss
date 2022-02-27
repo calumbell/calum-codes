@@ -1,0 +1,19 @@
+:root {
+  --white: #FFFFF0;
+  --black: #000000;
+  --primary: #496ddb;
+  --primary-light: #717ec3;
+  --primary-shade: #000080;
+  --secondary: #c95d63;
+  --secondary-shade: #ae8799;
+  --accent: #ee8434;
+}
+
+body {
+  margin: 0;
+  background-color: var(--white);
+}
+
+a {
+  text-decoration: none;
+}
