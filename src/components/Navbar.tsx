@@ -33,8 +33,7 @@ const Navbar = () => {
             L0, 0"
         />
       </svg>
-      <span>Calum Codes</span>
-      <Link to='/'>Home</Link>
+      <Link to='/'>Calum Codes</Link>
       <Link to='/about'>About</Link>
       <Link to='/projects'>Projects</Link>
     </nav>

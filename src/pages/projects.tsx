@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import { Card } from '../components';
 import { Project } from '../types';
+import * as styles from '../styles/projects.module.scss';
 
 interface GraphQLResponse {
   data: {
@@ -16,15 +18,18 @@ const ProjectsPage = ({ data }: GraphQLResponse) => {
   return (
     <main>
       <h1>Projects</h1>
-      <ul>
+      <ul className={styles.cardGrid}>
         {data.allPrismicProject.edges.map(edge => {
           const project = edge.node.data;
           return(
             <li>
-              <Link to={`/projects/${edge.node.uid}`}>
-                <p>{project.title.text}</p>
-                <p>{project.subtitle.text}</p>
-              </Link>
+              <Card
+                url={`/projects/${edge.node.uid}`}
+                title={project.title.text}
+                subtitle={project.subtitle.text}
+                image={project.thumbnail.gatsbyImageData}
+                imageAltText={project.thumbnail.alt}
+              />
             </li>
           )
         })}

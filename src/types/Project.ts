@@ -7,9 +7,12 @@ export type Project = {
     subtitle: {
       text: string,
     },
+    content: {
+      text: string,
+    }
     thumbnail: {
       gatsbyImageData: any,
       alt: string,
-    }
+    },
   }
 };
