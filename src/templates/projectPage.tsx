@@ -1,26 +1,14 @@
-import { graphql } from 'gatsby';
 import React from 'react';
+import { graphql } from 'gatsby';
+import { Project } from '../types';
 
-type ProjectQuery = {
+type GraphQLResponse = {
   data: {
-    prismicProject: {
-      data: {
-        title: {
-          text: string,
-        },
-        subtitle: {
-          text: string,
-        },
-        content: {
-          text: string,
-        }
-      }
-    }
+    prismicProject: Project,
   }
 };
 
-const projectPage = ({ data } : ProjectQuery ) => {
-  console.log(data)
+const projectPage = ({ data } : GraphQLResponse ) => {
   return (
     <main>
       <h1>{data.prismicProject.data.title.text}</h1>

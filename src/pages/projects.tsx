@@ -1,33 +1,18 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import { Project } from '../types';
 
-interface Props {
+interface GraphQLResponse {
   data: {
     allPrismicProject: {
-      edges: Array<Node>
+      edges: {
+        node: Project
+      }[]
     }
   }
 }
 
-interface Node {
-  node: {
-    uid: string,
-    data: {
-      title: {
-        text: string,
-      },
-      subtitle: {
-        text: string,
-      },
-      thumbnail: {
-        gatsbyImageData: any,
-        alt: string,
-      }
-    }
-  }
-}
-
-const ProjectsPage = ({ data } : Props) => {
+const ProjectsPage = ({ data }: GraphQLResponse) => {
   return (
     <main>
       <h1>Projects</h1>

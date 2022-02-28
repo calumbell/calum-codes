@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import * as styles from '../styles/Navbar.module.scss';
-const NavBar = () => {
+
+const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <svg className={styles.wave}
@@ -40,4 +41,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default Navbar
