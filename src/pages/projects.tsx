@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { Card } from '../components';
 import { Project } from '../types';
-import * as styles from '../styles/projects.module.scss';
+import * as styles from '../styles/modules/projects.module.scss';
 
 interface GraphQLResponse {
   data: {
@@ -17,7 +17,7 @@ interface GraphQLResponse {
 const ProjectsPage = ({ data }: GraphQLResponse) => {
   return (
     <main>
-      <h1>Projects</h1>
+      <h1 className={`uppercase`}>Projects</h1>
       <ul className={styles.cardGrid}>
         {data.allPrismicProject.edges.map(edge => {
           const project = edge.node.data;

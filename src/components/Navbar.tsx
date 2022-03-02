@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import * as styles from '../styles/Navbar.module.scss';
+import * as styles from '../styles/modules/Navbar.module.scss';
 
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <svg className={styles.wave}
         xmlns="http://www.w3.org/2000/svg" 
-        viewBox="0 0 3600 150">
+        viewBox="0 0 3600 150"
+      >
         <path 
           d="
             M0, 50 

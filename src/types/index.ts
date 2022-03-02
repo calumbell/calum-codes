@@ -1,5 +1,9 @@
-import { Project } from "./project";
+import { Project } from "./Project";
+import { HomePage } from "./HomePage";
+import { AboutPage } from './AboutPage';
 
 export {
-  Project
+  AboutPage,
+  HomePage,
+  Project,
 }

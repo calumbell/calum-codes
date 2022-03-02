@@ -1,3 +1,5 @@
+import { GatsbyImageProps, IGatsbyImageData } from "gatsby-plugin-image";
+
 export type Project = {
   uid: string,
   data: {
@@ -11,7 +13,7 @@ export type Project = {
       text: string,
     }
     thumbnail: {
-      gatsbyImageData: any,
+      gatsbyImageData: IGatsbyImageData,
       alt: string,
     },
   }

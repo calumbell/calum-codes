@@ -1,7 +1,7 @@
 import React from 'react';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
-import * as styles from '../styles/Card.module.scss';
+import * as styles from '../styles/modules/Card.module.scss';
 
 interface CardProps {
   title: string,
@@ -11,7 +11,7 @@ interface CardProps {
   imageAltText: string,
 }
 
-const Card = ( data : CardProps) => {
+const Card = (data : CardProps) => {
   return (
     <article className={styles.card}>
       <Link to={data.url}>
