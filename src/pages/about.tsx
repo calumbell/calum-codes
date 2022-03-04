@@ -13,7 +13,7 @@ interface GraphQLResponse {
 
 const About = ({ data }: GraphQLResponse) => {
   return (
-    <main>
+    <main className='container'>
       <h1>{data.prismicAboutpage.data.title.text}</h1>
       <article>{RichText.render(data.prismicAboutpage.data.content.richText)}</article>
     </main>

@@ -1,0 +1,154 @@
+/* ------------------------------- */
+/* Custom Properties               */
+/* ------------------------------- */
+
+:root {
+  /* Colours in HSL */
+  --clr-dark: 0 0 0;
+  --clr-white: 60 100 97;
+  --clr-primary: 255 67 57;
+
+  /* Font sizes */
+  --fs-900: 9.375rem;
+  --fs-800: 6.25rem;
+  --fs-700: 3.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+
+  /* Font Families */
+  --ff-serif: serif;
+  --ff-sans: sans-serif;
+}
+
+
+/* ------------------------------- */
+/* Reset                           */
+/* ------------------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset Margin */
+body,
+h1, h2, h3, h4, h5,
+p {
+  margin: 0;
+}
+
+/* Making sure headings aren't bold */
+h1, h2, h3, h4, h5 {
+  font-weight: 400;
+}
+
+/* Body */
+body {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-400);
+  color: hsl(var(--clr-white));
+  background-color: hsl(var(--clr-dark));
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Make images simple to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Make form elements simpler to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit; // form elements are the only ones that don't inherit font
+}
+
+/* disable animations for users who have turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------- */
+/* Utility Classes                 */
+/* ------------------------------- */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1em);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1em);
+}
+
+/* .container centers its children and applies horizonal padding */
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+/* Makes an element invisible to sighted users, but visiable to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Colours */
+
+.bg-light { background-color: hsl(var(--clr-white)); }
+.bg-dark { background-color: hsl(var(--clr-dark)); }
+.bg-primary { background-color: hsl(var(--clr-primary)); }
+
+.txt-light { color: hsl(var(--clr-white)); }
+.txt-dark { color: hsl(var(--clr-dark)); }
+.txt-primary { color: hsl(var(--clr-primary)); }
+
+/* Font */
+
+.ff-serif { font-family: var(--ff-serif); }
+.ff-sans { font-family: var(--ff-sans); }
+
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+.fw-light { font-weight: 200; }
+.fw-heavy { font-weight: 700; }
+
+.letter-spacing-1 { letter-spacing: 4px; }
+.letter-spacing-2 { letter-spacing: 2.5px; }
+.letter-spacing-3 { letter-spacing: 1.7px; }
+
+.uppercase { text-transform: uppercase; }

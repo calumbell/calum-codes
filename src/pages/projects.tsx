@@ -16,7 +16,7 @@ interface GraphQLResponse {
 
 const ProjectsPage = ({ data }: GraphQLResponse) => {
   return (
-    <main>
+    <main className='container'>
       <h1 className={`uppercase`}>Projects</h1>
       <ul className={styles.cardGrid}>
         {data.allPrismicProject.edges.map(edge => {

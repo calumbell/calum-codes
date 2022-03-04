@@ -3,6 +3,12 @@ import { Link } from 'gatsby'
 import * as styles from '../styles/modules/Navbar.module.scss';
 
 const Navbar = () => {
+  const routes = [
+    { name: 'Calum Codes', url: '/', },
+    { name: 'About', url: '/about', },
+    { name: 'Projects', url: '/projects'},
+  ]
+
   return (
     <nav className={styles.navbar}>
       <svg className={styles.wave}
@@ -34,9 +40,10 @@ const Navbar = () => {
             L0, 0"
         />
       </svg>
-      <Link to='/'>Calum Codes</Link>
-      <Link to='/about'>About</Link>
-      <Link to='/projects'>Projects</Link>
+      {routes.map(route => 
+        <Link to={route.url} className='uppercase letter-spacing-2'>{route.name}</Link>
+      )}
+
     </nav>
   )
 }

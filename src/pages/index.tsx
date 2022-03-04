@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { HomePage } from '../types';
 import { RichText } from 'prismic-reactjs'
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { HomePage } from '../types';
 
 interface GraphQLResponse {
   data: {
@@ -15,10 +15,13 @@ interface GraphQLResponse {
 const IndexPage = ({ data }: GraphQLResponse) => {
   console.log(data);
   return(
-    <main>
+    <main className='container'>
       <h1>{data.prismicHomepage.data.title.text}</h1>
-      <GatsbyImage />
       <article>{RichText.render(data.prismicHomepage.data.bio.richText)}</article>
+      <GatsbyImage 
+        image={data.prismicHomepage.data.hero_image.gatsbyImageData}
+        alt={data.prismicHomepage.data.hero_image.alt}
+      />
     </main>
   );
 }
