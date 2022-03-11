@@ -1,8 +1,8 @@
 import Card from "./Card";
 import Layout from "./Layout";
-import LongWaves from './LongWaves';
+import Waves from './Waves';
 import Navbar from "./Navbar";
 
 export {
-  Card, Layout, LongWaves, Navbar
+  Card, Layout, Waves, Navbar
 }

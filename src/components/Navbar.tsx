@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { LongWaves } from '.';
+import { Waves } from '.';
 
 const Navbar = () => {
   const routes = [
@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className='navbar'>
-      <LongWaves />
+      <Waves />
       {routes.map(route => 
         <Link 
           to={route.url} 
