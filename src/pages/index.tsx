@@ -16,7 +16,7 @@ const IndexPage = ({ data }: GraphQLResponse) => {
   console.log(data);
   return(
     <main className='container'>
-      <h1>{data.prismicHomepage.data.title.text}</h1>
+      <h1 className='fw-bold fs-700'>{data.prismicHomepage.data.title.text}</h1>
       <article>{RichText.render(data.prismicHomepage.data.bio.richText)}</article>
       <GatsbyImage 
         image={data.prismicHomepage.data.hero_image.gatsbyImageData}

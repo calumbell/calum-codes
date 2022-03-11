@@ -2,7 +2,6 @@ import * as React from 'react';
 import { PageProps } from 'gatsby';
 import { Navbar } from './';
 import '../styles/index.scss';
-import '../styles/Layout.scss';
 
 const Layout = ({children}: PageProps) => {
   return(

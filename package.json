@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@types/normalize-package-data": "^2.4.1",
-    "gatsby": "^4.7.2",
+    "gatsby": "^4.9.3",
     "gatsby-plugin-image": "^2.8.0",
     "gatsby-plugin-sass": "^5.8.0",
     "gatsby-plugin-sharp": "^4.8.0",
