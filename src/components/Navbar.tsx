@@ -12,10 +12,11 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
       <Waves />
-      {routes.map(route => 
+      {routes.map((route, i) => 
         <Link 
           to={route.url} 
           className='nav-link text-shadow-dark uppercase letter-spacing-2'
+          key={i}
         >
           {route.name}
         </Link>

@@ -13,9 +13,9 @@
   /* Colours in HSL */
   --clr-dark: 0 0% 0%;
   --clr-light: 60 100% 97%;
-  --clr-primary: 255 67% 57%;
+  --clr-primary: 240 100% 25%;
   --clr-primary-shade: 230 41% 60% ;
-  --clr-primary-light: 240 100% 25%;
+  --clr-primary-light: 255 67% 57%;
 
   /* Font sizes */
   --fs-900: 9.375rem;
@@ -196,6 +196,16 @@ a { text-decoration: none; }
   }
 }
 
+
+.bubbles-canvas {
+  width: 100%;
+  margin: 1rem;
+  position: relative;
+  overflow: visible;
+  background-color: hsl( var(--clr-primary-light) / 0.5 );
+  border: .25rem solid hsl(var(--clr-primary) );
+  border-radius: 1rem;
+}
 
 .wave-container {
   position: absolute;
