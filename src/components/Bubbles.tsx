@@ -6,6 +6,7 @@ const Bubbles = () => {
   const requestIdRef = useRef<number>(0);
 
   const clamp = (num :number, min:number, max:number) => Math.min(Math.max(num, min), max);
+  
   const generateBubbles = (n: number) => {
     let output = [];
     for (let i = 0; i < n; i++) {
@@ -64,7 +65,7 @@ const Bubbles = () => {
     }
   }, []);
 
-  return <canvas className='bubbles-canvas'{...size} ref={canvasRef}></canvas>;
+  return <canvas className='bubbles-canvas' {...size} ref={canvasRef}></canvas>;
 }
 
 export default Bubbles;

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { RichText } from 'prismic-reactjs'
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { HomePage } from '../types';
-import { Bubbles } from '../components';
+import { Bubbles, SocialMedia } from '../components';
 
 interface GraphQLResponse {
   data: {
@@ -18,6 +18,7 @@ const IndexPage = ({ data }: GraphQLResponse) => {
     <main className='container'>
       <Bubbles />
       <article>{RichText.render(data.prismicHomepage.data.bio.richText)}</article>
+    <SocialMedia />
     </main>
   );
 }
