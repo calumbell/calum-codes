@@ -4,6 +4,7 @@ import { RichText } from 'prismic-reactjs'
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { HomePage } from '../types';
 import { Bubbles, SocialMedia } from '../components';
+import Hero from '../components/Hero';
 
 interface GraphQLResponse {
   data: {
@@ -16,8 +17,10 @@ interface GraphQLResponse {
 const IndexPage = ({ data }: GraphQLResponse) => {
   return(
     <main className='container'>
-      <Bubbles />
-      <article>{RichText.render(data.prismicHomepage.data.bio.richText)}</article>
+      <Hero 
+        title="Hi, I am Calum"
+        bio={data.prismicHomepage.data.bio.text}
+      />
     <SocialMedia />
     </main>
   );
@@ -33,6 +36,7 @@ export const query = graphql`
           text
         }
         bio {
+          text
           richText
         }
         hero_image {

@@ -7,6 +7,7 @@ export type HomePage = {
   },
   bio: {
     richText: RichTextBlock[];
+    text: string;
   },
   hero_image: {
     gatsbyImageData: IGatsbyImageData;

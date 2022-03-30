@@ -65,7 +65,7 @@ const Bubbles = () => {
     }
   }, []);
 
-  return <canvas className='bubbles-canvas' {...size} ref={canvasRef}></canvas>;
+  return <canvas className='bubbles-canvas' {...size} ref={canvasRef} />
 }
 
 export default Bubbles;
