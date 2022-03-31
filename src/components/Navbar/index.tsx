@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Waves } from '.';
+import { Waves } from '../';
+import * as styles from './Navbar.module.scss';
 
 const Navbar = () => {
   const routes = [
@@ -10,12 +11,12 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className='navbar'>
+    <nav className={styles.navbar}>
       <Waves />
       {routes.map((route, i) => 
         <Link 
           to={route.url} 
-          className='nav-link text-shadow-dark uppercase letter-spacing-2'
+          className={`${styles.navLink} text-shadow-dark uppercase letter-spacing-2`}
           key={i}
         >
           {route.name}

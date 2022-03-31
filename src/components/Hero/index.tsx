@@ -1,16 +1,17 @@
 import React from 'react'
 import { Bubbles }  from '../';
+import * as styles from './Hero.module.scss';
 
-interface HeroProps {
+type HeroProps = {
   title: string;
   bio: string;
 }
 
-const Hero = ({ title, bio}: HeroProps) => {
+const Hero = ({ title, bio }: HeroProps) => {
   return (
-    <div className='hero-container'>
-      {title && <h1 className='hero-title fs-700'>{title}</h1>}
-      {bio && <p className='hero-bio'>{bio}</p>}
+    <div className={styles.heroContainer}>
+      {title && <h1 className={styles.heroTitle}>{title}</h1>}
+      {bio && <p className={styles.heroBio}>{bio}</p>}
       <Bubbles />
     </div>
   )

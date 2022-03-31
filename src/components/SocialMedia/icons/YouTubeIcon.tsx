@@ -1,5 +1,10 @@
 import React from 'react';
 
+type YouTubeIconProps = {
+  url: string
+}
+
+
 const YouTubeIcon = ({ url }: YouTubeIconProps) => {
   const icon = {
     svgAttributes: {
@@ -22,7 +27,4 @@ const YouTubeIcon = ({ url }: YouTubeIconProps) => {
 }
 export default YouTubeIcon;
 
-type YouTubeIconProps = {
-  url: string
-}
 

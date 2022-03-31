@@ -1,0 +1,9 @@
+.bubbles-canvas {
+  width: 100%;
+  margin: 1rem;
+  position: block;
+  overflow: visible;
+  background-color: hsl( var(--clr-primary-light) / 0.5 );
+  border: .25rem solid hsl(var(--clr-primary) );
+  border-radius: 1rem;
+}

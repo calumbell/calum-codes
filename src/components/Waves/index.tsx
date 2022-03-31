@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import * as styles from './Waves.module.scss';
 
 const Waves = () => {
 	const [waves, setWaves] = useState([
@@ -11,7 +12,7 @@ const Waves = () => {
 			{waves.map((wave, i) => {
 				return(
 					<svg
-						className='wave-container' key={i}
+						className={styles.waveContainer} key={i}
 						width='200%'
 						height='inherit'
 						preserveAspectRatio='none'
@@ -24,7 +25,7 @@ const Waves = () => {
 					>
 						<g>
 							<path	
-								className='wave'
+								className={styles.wave}
 								d="	M0, 50 
 										C600, 100, 1200, 100, 1800, 50 
 										C2400, 0, 3000, 0, 3600, 50 

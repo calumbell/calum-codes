@@ -1,4 +1,4 @@
-import { GatsbyImageProps, IGatsbyImageData } from "gatsby-plugin-image";
+import { IGatsbyImageData } from "gatsby-plugin-image";
 
 export type Project = {
   uid: string,

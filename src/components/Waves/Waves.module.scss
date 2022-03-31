@@ -1,0 +1,24 @@
+.wave-container {
+  position: absolute;
+  height: inherit;
+  margin:0;
+  z-index: -1;
+  opacity: 1;
+  g { transform: translateX(var(--offset, 0%)); }
+
+}
+
+.wave {
+  animation: waveAnimation var(--period, '30s') linear infinite;
+  fill: hsl(var(--clr-primary) / 0.6);
+  overflow-y: hidden;
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

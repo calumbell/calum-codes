@@ -1,0 +1,9 @@
+.social-media {
+  list-style: none;
+  width: 100%;
+  justify-content: space-around;
+  display: flex;
+  li { display: inline; }
+  svg { fill: hsl(var(--clr-primary)); }
+
+}

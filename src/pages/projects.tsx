@@ -1,8 +1,8 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { Card } from '../components';
 import { Project } from '../types';
-import * as styles from '../styles/modules/projects.module.scss';
+import * as styles from '../styles/pages/projects.module.scss';
 
 interface GraphQLResponse {
   data: {

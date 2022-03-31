@@ -1,9 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react';
+import * as styles from './Bubbles.module.scss';
 
 const Bubbles = () => {
   const [size, setSize] = useState({ width: 1600, height: 600 });
   const canvasRef = useRef(null);
   const requestIdRef = useRef<number>(0);
+  console.log(styles)
 
   const clamp = (num :number, min:number, max:number) => Math.min(Math.max(num, min), max);
   
@@ -65,7 +67,7 @@ const Bubbles = () => {
     }
   }, []);
 
-  return <canvas className='bubbles-canvas' {...size} ref={canvasRef} />
+  return <canvas className={styles.bubblesCanvas} {...size} ref={canvasRef} />
 }
 
 export default Bubbles;

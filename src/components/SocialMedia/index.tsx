@@ -1,5 +1,6 @@
 import React from 'react'
 import { LinkedinIcon, TwitterIcon, YouTubeIcon } from './icons';
+import * as styles from './SocialMedia.module.scss';
 
 const networks = {
   twitter: { url: 'https://twitter.com/CalumCodes'},
@@ -9,7 +10,7 @@ const networks = {
 
 const SocialMedia = () => {
   return (
-    <ul className='social-media'>
+    <ul className={styles.socialMedia}>
       { networks.hasOwnProperty('twitter') &&
         <li> <TwitterIcon url={networks.twitter.url} /> </li>
       }
