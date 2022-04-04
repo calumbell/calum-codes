@@ -10,10 +10,10 @@ type GraphQLResponse = {
 
 const projectPage = ({ data } : GraphQLResponse ) => {
   return (
-    <main>
+    <main className='container'>
       <h1>{data.prismicProject.data.title.text}</h1>
       <sub>{data.prismicProject.data.subtitle.text}</sub>
-      <p>{data.prismicProject.data.subtitle.text}</p>
+      <p>{data.prismicProject.data.content.text}</p>
     </main>
   )
 }
@@ -24,15 +24,10 @@ export const query = graphql`
   query ProjectPage($slug: String) {
     prismicProject (uid: {eq: $slug}) {
       data {
-        title {
-          text
-        }
-        subtitle {
-          text
-        }
-        content {
-          text
-        }
+        title { text }
+        subtitle { text }
+        content { text }
+        type
       }
     }
   }

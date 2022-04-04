@@ -3,9 +3,8 @@ import * as styles from './Bubbles.module.scss';
 
 const Bubbles = () => {
   const [size, setSize] = useState({ width: 1600, height: 600 });
-  const canvasRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const requestIdRef = useRef<number>(0);
-  console.log(styles)
 
   const clamp = (num :number, min:number, max:number) => Math.min(Math.max(num, min), max);
   
@@ -21,6 +20,7 @@ const Bubbles = () => {
     }
     return output;
   };
+
   const bubblesRef = useRef(generateBubbles(3));
 
   const update = () => {
@@ -40,7 +40,9 @@ const Bubbles = () => {
   }
 
   const draw = () => {
-    const ctx = canvasRef.current.getContext('2d');
+    const ctx = canvasRef?.current?.getContext('2d');
+    if (!ctx) return;
+
     const bubbles = bubblesRef.current;
     ctx.clearRect(0, 0, size.width, size.height);
 
@@ -54,7 +56,6 @@ const Bubbles = () => {
   }
 
   const tick = () => {
-    if (!canvasRef.current) return;
     update();
     draw();
     requestIdRef.current = requestAnimationFrame(tick);

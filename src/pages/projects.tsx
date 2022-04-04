@@ -4,20 +4,11 @@ import { Card } from '../components';
 import { Project } from '../types';
 import * as styles from '../styles/pages/projects.module.scss';
 
-interface GraphQLResponse {
-  data: {
-    allPrismicProject: {
-      edges: {
-        node: Project
-      }[]
-    }
-  }
-}
 
 const ProjectsPage = ({ data }: GraphQLResponse) => {
   return (
     <main className='container'>
-      <h1 className={`uppercase`}>Projects</h1>
+      <h1>Projects</h1>
       <ul className={styles.cardGrid}>
         {data.allPrismicProject.edges.map(edge => {
           const project = edge.node.data;
@@ -40,6 +31,16 @@ const ProjectsPage = ({ data }: GraphQLResponse) => {
 
 export default ProjectsPage;
 
+interface GraphQLResponse {
+  data: {
+    allPrismicProject: {
+      edges: {
+        node: Project
+      }[]
+    }
+  }
+}
+
 export const query = graphql`
   query GetProjects {
     allPrismicProject {
@@ -47,18 +48,13 @@ export const query = graphql`
         node {
           uid
           data {
-            title {
-              text
-            }
-            subtitle {
-              text
-            }
+            title { text }
+            type
+            subtitle { text } 
+            content { text }
             thumbnail {
               gatsbyImageData
               alt
-            }
-            content {
-              text
             }
           }
         }

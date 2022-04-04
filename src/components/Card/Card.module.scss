@@ -1,7 +1,11 @@
 .card {
   padding: 1rem;
+  background-image: radial-gradient(hsl(var(--clr-light)), hsl(var(--clr-primary)/0.1) );
   height: 100%;
-  border: .5rem solid hsl(var(--clr-primary));
+  width: 100%;
+  border: .25rem solid hsl(var(--clr-primary));
+  position: relative;
+  display: block;
   border-radius: 0.5rem;
   
   h2 {
@@ -11,4 +15,8 @@
     text-align: center;
     display: block;
   }
+}
+
+.card-text {
+  padding: var(--spacing-1);
 }

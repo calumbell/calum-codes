@@ -35,6 +35,12 @@
   --fw-light: 300;
   --fw-med: 500;
   --fw-bold: 700;
+
+  --spacing-1: .5rem;
+  --spacing-2: .75rem;
+  --spacing-3: 1.2rem;
+  --spacing-4: 1.8rem;
+  --spacing-5: 2.6rem;
 }
 
 
@@ -61,6 +67,7 @@ p {
 /* Making sure headings aren't bold */
 h1, h2, h3, h4, h5 {
   font-weight: 400;
+  font-family: var(--ff-serif);
 }
 
 /* Body */
@@ -87,7 +94,10 @@ select {
   font: inherit; // form elements are the only ones that don't inherit font
 }
 
-a { text-decoration: none; }
+a { 
+  text-decoration: none;
+  color: unset;
+}
 
 /* disable animations for users who have turned them off */
 @media (prefers-reduced-motion: reduce) {
@@ -129,8 +139,9 @@ a { text-decoration: none; }
 /* .container centers its children and applies horizonal padding */
 .container {
   padding-right: 2rem;
+  padding-left: 2rem;
   margin: auto;
-  max-width: 64rem;
+  max-width: var(--max-width, 64rem);
 }
 
 /* Makes an element invisible to sighted users, but visiable to screen readers */
@@ -158,7 +169,6 @@ a { text-decoration: none; }
 
 
 /* Font */
-
 .ff-serif { font-family: var(--ff-serif); }
 .ff-sans { font-family: var(--ff-sans); }
 
@@ -182,11 +192,21 @@ a { text-decoration: none; }
 .uppercase { text-transform: uppercase; }
 
 
-.text-shadow-dark { text-shadow: hsl( var(--clr-dark) ) 0px 1px 4px;}
-
-
+.text-shadow-dark { text-shadow: hsl( var(--clr-dark) ) 0px 1px 4px; }
+.text-shadow-light { text-shadow: hsl( var(--clr-light) ) 0px 1px 2px; }
+.text-shadow-primary { text-shadow: hsl( var(--clr-primary) ) 0px 1px 4px; }
 
 /* SVG */
 .fill-clr-primary { fill: hsl(var(--clr-primary) ); }
 .fill-clr-primary-light { fill: hsl(var(--clr-primary-light) ); }
 .fill-clr-primary-shade { fill: hsl(var(--clr-primary-shade) ); }
+
+/* Box shadows */
+.box-shadow {
+  box-shadow: 0 0 10px hsl( var(--clr-dark) / 0.2);
+}
+
+.hover-shadow {
+  transition: box-shadow 0.3s;
+  &:hover, &:focus { box-shadow: 0 0 13px hsl( var(--clr-dark) / 0.6); }
+}

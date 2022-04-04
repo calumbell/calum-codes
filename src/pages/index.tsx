@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { graphql } from 'gatsby';
-import { RichText } from 'prismic-reactjs'
-import { GatsbyImage } from 'gatsby-plugin-image';
 import { HomePage } from '../types';
-import { Bubbles, SocialMedia } from '../components';
+import { SocialMedia } from '../components';
 import Hero from '../components/Hero';
 
 interface GraphQLResponse {
@@ -16,12 +14,18 @@ interface GraphQLResponse {
 
 const IndexPage = ({ data }: GraphQLResponse) => {
   return(
-    <main className='container'>
+    <main 
+      className='container' 
+      style={{['--max-width']: '128rem'} as CSSProperties}
+    >
+
       <Hero 
         title="Hi, I am Calum"
         bio={data.prismicHomepage.data.bio.text}
       />
-    <SocialMedia />
+
+      <SocialMedia />
+    
     </main>
   );
 }

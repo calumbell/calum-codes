@@ -9,6 +9,7 @@ export type Project = {
     subtitle: {
       text: string,
     },
+    type: string,
     content: {
       text: string,
     }

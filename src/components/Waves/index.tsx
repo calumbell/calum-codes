@@ -3,9 +3,9 @@ import * as styles from './Waves.module.scss';
 
 const Waves = () => {
 	const [waves, setWaves] = useState([
-		{ offset: `-${(50*Math.random())}%`, period: `${(30*Math.random())+25}s`, },
-		{ offset: `-${(50*Math.random())}%`, period: `${(30*Math.random())+25}s`, },
-		{ offset: `-${(50*Math.random())}%`, period: `${(30*Math.random())+25}s`, },
+		{ offset: `-${(50*Math.random())}%`, period: `${(30*Math.random())+45}s`, },
+		{ offset: `-${(50*Math.random())}%`, period: `${(30*Math.random())+45}s`, },
+		{ offset: `-${(50*Math.random())}%`, period: `${(30*Math.random())+45}s`, },
 	]);
 	return(
 		<>

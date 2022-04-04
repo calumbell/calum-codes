@@ -13,13 +13,18 @@ interface CardProps {
 
 const Card = (data : CardProps) => {
   return (
-    <article className={styles.card}>
-      <Link to={data.url}>
+
+      <Link 
+        to={data.url} 
+        className={`${styles.card} hover-shadow`}
+      >
         <GatsbyImage image={data.image} alt={data.imageAltText} />
-        <h2>{data.title}</h2>
-        <sub>{data.subtitle}</sub>
+        <article className={styles.cardText}>
+          <h2>{data.title}</h2>
+          <sub className='ff-sans uppercase fs-200'>{data.subtitle}</sub>
+        </article>
       </Link>
-    </article>
+
   )
 }
 
