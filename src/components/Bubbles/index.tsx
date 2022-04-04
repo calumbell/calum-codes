@@ -1,70 +1,48 @@
 import React, { useRef, useState, useEffect } from 'react';
 import * as styles from './Bubbles.module.scss';
+import { Bubble } from './types'
+import { draw, generateBubbles, update } from './utils';
+
 
 const Bubbles = () => {
-  const [size, setSize] = useState({ width: 1600, height: 600 });
+  const [size, setSize] = useState({width: 1000, height: 800})
+  const aspectRatio = 0.8;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const requestIdRef = useRef<number>(0);
-
-  const clamp = (num :number, min:number, max:number) => Math.min(Math.max(num, min), max);
-  
-  const generateBubbles = (n: number) => {
-    let output = [];
-    for (let i = 0; i < n; i++) {
-      const radius = (300*Math.random()) + 50;
-      const x = clamp(size.width * Math.random(), radius, size.width-1);
-      const y = clamp(size.height * Math.random(), radius, size.height-1);
-      const dx = (Math.random() -0.5)/2;
-      const dy = (Math.random() -0.5)/6;
-      output.push({ x: x, y: y, r: radius, dx: dx, dy: dy})
-    }
-    return output;
-  };
-
-  const bubblesRef = useRef(generateBubbles(3));
-
-  const update = () => {
-    const bubbles = bubblesRef.current;
-
-    bubbles.forEach(bubble => {
-      /* Update positions */
-      bubble.x += bubble.dx;
-      bubble.y += bubble.dy;
-
-      /* Collision detection */
-      if (bubble.x >= size.width || bubble.x < 0)
-        bubble.dx *= -1;
-      if (bubble.y >= size.height || bubble.y < 0)
-        bubble.dy *= -1;
-    });
-  }
-
-  const draw = () => {
-    const ctx = canvasRef?.current?.getContext('2d');
-    if (!ctx) return;
-
-    const bubbles = bubblesRef.current;
-    ctx.clearRect(0, 0, size.width, size.height);
-
-    bubbles.forEach(bubble => {
-      ctx.beginPath();
-      ctx.arc(bubble.x, bubble.y, bubble. r, 0, 2*Math.PI);
-      ctx.fillStyle = 'hsl(240 100% 25% / 0.25)';
-      ctx.fill();
-      ctx.closePath();
-    })
-  }
+  const bubblesRef = useRef<Bubble[]>([]);
 
   const tick = () => {
-    update();
-    draw();
+    if (!canvasRef.current) return;
+    update(bubblesRef.current, canvasRef.current.width, canvasRef.current.height);
+    draw(canvasRef.current, bubblesRef.current);
     requestIdRef.current = requestAnimationFrame(tick);
   }
-
+  
   useEffect(() => {
+    const onResize = () => {
+      const newSize = {
+        width: window.innerWidth,
+        height: window.innerHeight * aspectRatio
+      };
+      setSize(newSize)
+      bubblesRef?.current?.map(bubble => {
+        if (bubble.x >= newSize.width) bubble.x -= newSize.width;
+        if (bubble.y >= newSize.height) bubble.y -= newSize.height;
+      });
+    }
+
+    const initSize = { 
+      width: window.innerWidth, 
+      height: window.innerHeight * aspectRatio 
+    }
+    setSize(initSize);
+    bubblesRef.current = generateBubbles(3, initSize.width, initSize.height);
+    window.addEventListener('resize', onResize)
     requestAnimationFrame(tick);
+
     return () => {
       cancelAnimationFrame(requestIdRef.current);
+      window.removeEventListener('resize', onResize);
     }
   }, []);
 

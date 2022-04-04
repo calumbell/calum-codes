@@ -1,4 +1,4 @@
-import { GatsbyImageProps, IGatsbyImageData } from "gatsby-plugin-image";
+import { IGatsbyImageData } from "gatsby-plugin-image";
 import { RichTextBlock } from "prismic-reactjs";
 
 export type HomePage = {

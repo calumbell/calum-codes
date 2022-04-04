@@ -111,6 +111,11 @@ a {
   }
 }
 
+/* Vertical scrollbar always visible */
+html {
+  overflow-y: scroll;
+}
+
 /* ------------------------------- */
 /* Utility Classes                 */
 /* ------------------------------- */
