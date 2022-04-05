@@ -38,6 +38,7 @@ const draw = (canvas: HTMLCanvasElement | null, bubbles: Bubble[]) => {
  */
 const generateBubble = (canvasX :number, canvasY: number) => {
   const sizes = [50, 100, 150, 200, 250];
+  // ~~ is more performant than Math.floor()
   const radius = sizes[~~(Math.random() * sizes.length)];
   const x = clamp(canvasX * Math.random(), radius, canvasX-radius-1);
   const y = clamp(canvasY * Math.random(), radius, canvasY-radius-1);

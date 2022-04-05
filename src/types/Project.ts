@@ -13,9 +13,16 @@ export type Project = {
     content: {
       text: string,
     }
+    link: {
+      url: string,
+    },
     thumbnail: {
       gatsbyImageData: IGatsbyImageData,
       alt: string,
     },
+    banner: {
+      gatsbyImageData: IGatsbyImageData,
+      alt: string,
+    }
   }
 };
