@@ -18,10 +18,22 @@ const Card = (data : CardProps) => {
         to={data.url} 
         className={`${styles.card} hover-shadow`}
       >
-        <GatsbyImage image={data.image} alt={data.imageAltText} />
-        <article className={styles.cardText}>
-          <h2>{data.title}</h2>
-          <sub className='ff-sans uppercase fs-200'>{data.subtitle}</sub>
+        <GatsbyImage
+          image={data.image}
+          alt={data.imageAltText}
+          className={styles.cardThumbnail}
+        />
+
+        <article className={styles.cardTextContainer}>
+
+          <h2 className={styles.cardTitle}>{data.title}</h2>
+          <p className={styles.cardSubtitle}>Website</p>
+
+          <ul className={styles.projectTags}>
+            <li>Tag 1</li>
+            <li>Tag 2</li>
+            <li>Tag 3</li>
+          </ul>
         </article>
       </Link>
 

@@ -13,8 +13,9 @@
   /* Colours in HSL */
   --clr-dark: 0 0% 0%;
   --clr-light: 60 100% 97%;
+  --clr-faded: 211, 12%, 48%;
   --clr-primary: 240 100% 25%;
-  --clr-primary-shade: 230 41% 60% ;
+  --clr-primary-shade: 230 41% 60%;
   --clr-primary-light: 255 67% 57%;
 
   /* Font sizes */
@@ -163,14 +164,22 @@ html {
 }
 
 /* Colours */
+.bg-light { 
+  background-color: hsl(var(--clr-light));
+}
+.bg-dark { 
+  background-color: hsl(var(--clr-dark));
+}
+.bg-primary { 
+  background-color: hsl(var(--clr-primary)); 
+}
 
-.bg-light { background-color: hsl(var(--clr-light)); }
-.bg-dark { background-color: hsl(var(--clr-dark)); }
-.bg-primary { background-color: hsl(var(--clr-primary)); }
+.clr-light { color: hsl(var(--clr-light)); }
+.clr-dark { color: hsl(var(--clr-dark)); }
+.clr-faded { color: hsl(var(--clr-faded)); }
+.clr-primary { color: hsl(var(--clr-primary)); }
 
-.txt-light { color: hsl(var(--clr-light)); }
-.txt-dark { color: hsl(var(--clr-dark)); }
-.txt-primary { color: hsl(var(--clr-primary)); }
+
 
 
 /* Font */
@@ -213,5 +222,5 @@ html {
 
 .hover-shadow {
   transition: box-shadow 0.3s;
-  &:hover, &:focus { box-shadow: 0 0 13px hsl( var(--clr-dark) / 0.6); }
+  &:hover, &:focus { box-shadow: 0 0 3px 3px hsl( var(--clr-dark) / 0.1); }
 }
